@@ -13,7 +13,7 @@
 #define METERS_PER_MILE 1609.344
 
 @interface HawkBusClickedOnStopViewController ()
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *StopsListView;
 @end
@@ -50,6 +50,11 @@
     CLLocationCoordinate2D  stopPoint;
     stopPoint.latitude = self.latitude;
     stopPoint.longitude = self.longitude;
+    MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+    annotationPoint.coordinate = stopPoint;
+    annotationPoint.title = self.nameString;
+    annotationPoint.subtitle = self.numberString;
+    [self.mapView addAnnotation:annotationPoint];
     /**AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:stopPoint];
     [self.mapView addAnnotation:addAnnotation];
     [addAnnotation release];**/
