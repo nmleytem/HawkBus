@@ -23,6 +23,9 @@
 		243ECEF1170119AC00D3CC0B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF0170119AC00D3CC0B /* second.png */; };
 		243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF2170119AC00D3CC0B /* second@2x.png */; };
 		2459CA27171D0F6E000FA77C /* stop-locations.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2459CA26171D0F6E000FA77C /* stop-locations.rtf */; };
+		249CA840171DC1B6008EDCEA /* HawkBusStopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */; };
+		249CA848171DC565008EDCEA /* HawkBusStopsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA847171DC565008EDCEA /* HawkBusStopsList.m */; };
+		249CA84B171DC9FF008EDCEA /* HawkBusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA84A171DC9FF008EDCEA /* HawkBusStop.m */; };
 		24BA18E517139EB600369C72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E417139EB600369C72 /* MapKit.framework */; };
 		24BA18E817139F4800369C72 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E717139F4800369C72 /* CoreData.framework */; };
 		24CDE15E171CEA0C00766A3A /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CDE15D171CEA0C00766A3A /* bus.png */; };
@@ -50,6 +53,12 @@
 		243ECEF0170119AC00D3CC0B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		243ECEF2170119AC00D3CC0B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		2459CA26171D0F6E000FA77C /* stop-locations.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "stop-locations.rtf"; sourceTree = SOURCE_ROOT; };
+		249CA83E171DC1B6008EDCEA /* HawkBusStopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusStopViewController.h; sourceTree = "<group>"; };
+		249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusStopViewController.m; sourceTree = "<group>"; };
+		249CA846171DC565008EDCEA /* HawkBusStopsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusStopsList.h; sourceTree = "<group>"; };
+		249CA847171DC565008EDCEA /* HawkBusStopsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusStopsList.m; sourceTree = "<group>"; };
+		249CA849171DC9FF008EDCEA /* HawkBusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusStop.h; sourceTree = "<group>"; };
+		249CA84A171DC9FF008EDCEA /* HawkBusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusStop.m; sourceTree = "<group>"; };
 		24BA18E417139EB600369C72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		24BA18E717139F4800369C72 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		24CDE15D171CEA0C00766A3A /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bus.png; path = ../bus.png; sourceTree = "<group>"; };
@@ -108,6 +117,12 @@
 				243ECEE3170119AC00D3CC0B /* MainStoryboard.storyboard */,
 				243ECEE6170119AC00D3CC0B /* HawkBusFirstViewController.h */,
 				243ECEE7170119AC00D3CC0B /* HawkBusFirstViewController.m */,
+				249CA83E171DC1B6008EDCEA /* HawkBusStopViewController.h */,
+				249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */,
+				249CA846171DC565008EDCEA /* HawkBusStopsList.h */,
+				249CA847171DC565008EDCEA /* HawkBusStopsList.m */,
+				249CA849171DC9FF008EDCEA /* HawkBusStop.h */,
+				249CA84A171DC9FF008EDCEA /* HawkBusStop.m */,
 				243ECEE9170119AC00D3CC0B /* first.png */,
 				243ECEEB170119AC00D3CC0B /* first@2x.png */,
 				243ECEF0170119AC00D3CC0B /* second.png */,
@@ -210,6 +225,9 @@
 				243ECED8170119AC00D3CC0B /* main.m in Sources */,
 				243ECEDC170119AC00D3CC0B /* HawkBusAppDelegate.m in Sources */,
 				243ECEE8170119AC00D3CC0B /* HawkBusFirstViewController.m in Sources */,
+				249CA840171DC1B6008EDCEA /* HawkBusStopViewController.m in Sources */,
+				249CA848171DC565008EDCEA /* HawkBusStopsList.m in Sources */,
+				249CA84B171DC9FF008EDCEA /* HawkBusStop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
