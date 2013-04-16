@@ -17,8 +17,8 @@
 - (NSMutableArray *) theStops{
     if (!_theStops){
         _theStops = [[NSMutableArray alloc] init];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"MacBride Hall" stopNumber:@"0120" stopLatitude:41.66246 stopLongitude:-91.53579 stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart",@"blue", @"ecs", @"hwkex", @"hwkdrm", @"inter", @"mayshut", @"pentnight", @"pent", @"studart", nil]]];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"Clinton & Iowa" stopNumber:@"1030" stopLatitude:41.6607706 stopLongitude:-91.5346899 stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart", @"ecs", @"hwkex", @"hwkdrm", @"inter", @"mayshut", @"pentnight", @"pent", @"red", @"studart", nil]]];
+        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"MacBride Hall" stopNumber:@"0120" stopLatitude:41.66246 stopLongitude:-91.53579 stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts",@"Blue", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Studio Arts", nil]]];
+        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"Clinton & Iowa" stopNumber:@"1030" stopLatitude:41.6607706 stopLongitude:-91.5346899 stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Red", @"Studio Arts", nil]]];
         /**_theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]
         _theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]
         _theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]

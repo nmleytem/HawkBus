@@ -8,7 +8,7 @@
 
 #import "HawkBusStopViewController.h"
 #import "hawkBusStopsList.h"
-
+#import "HawkBusClickedOnStopViewController.h"
 
 @interface HawkBusStopViewController ()<UITableViewDataSource, UITableViewDelegate> 
 
@@ -41,9 +41,13 @@
     // Dispose of any resources that can be recreated.
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	/**HawkBusStopViewController * childVC = segue.destinationViewController;
+	HawkBusClickedOnStopViewController * childVC = segue.destinationViewController;
 	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
-    childVC**/
+    childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
+    childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
+    childVC.latitude = [self.stopsList stopLatitudeForIndex:selectedCellNum];
+    childVC.longitude = [self.stopsList stopLongitudeForIndex:selectedCellNum];
+    childVC.stopsArray = [self.stopsList stopRoutesArrayForIndex:selectedCellNum];
 }
 #pragma mark - Table view data source
 

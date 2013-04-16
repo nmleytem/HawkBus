@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -36,12 +36,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVe-ms-qw1">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lVe-ms-qw1">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeX-iU-hfD">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QeX-iU-hfD">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,47 +72,36 @@
             </objects>
             <point key="canvasLocation" x="769" y="-109"/>
         </scene>
-        <!--Hawk Bus First View Controller - First-->
+        <!--Hawk Bus Clicked On Stop View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="HawkBusFirstViewController" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="HawkBusClickedOnStopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euh-Yk-60a">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="191" id="BWL-Ze-77y"/>
-                                </constraints>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="euh-Yk-60a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                                 <connections>
                                     <outlet property="delegate" destination="16" id="Xjh-QD-4As"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-Qs-D0r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YNm-Qs-D0r">
+                                <rect key="frame" x="0.0" y="269" width="320" height="186"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="1sU-vl-tfd"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="16" id="f0U-QZ-zMe"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="euh-Yk-60a" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="EGA-lZ-6zG"/>
-                            <constraint firstItem="YNm-Qs-D0r" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="Lmq-eG-bGE"/>
-                            <constraint firstItem="YNm-Qs-D0r" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="Rse-8W-d6B"/>
-                            <constraint firstItem="euh-Yk-60a" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="aWO-Xq-cF8"/>
-                            <constraint firstItem="YNm-Qs-D0r" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="mdz-z0-Lzr"/>
-                            <constraint firstItem="euh-Yk-60a" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="qg1-18-gff"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
                     <navigationItem key="navigationItem" id="eTH-Ik-Hg4"/>
                     <connections>
                         <outlet property="StopsListView" destination="YNm-Qs-D0r" id="xW1-eK-3EK"/>
                         <outlet property="mapView" destination="euh-Yk-60a" id="xNG-Zv-FZe"/>
+                        <outlet property="navigationBar" destination="eTH-Ik-Hg4" id="UzT-K3-Eyl"/>
                         <outlet property="searchDisplayController" destination="f8C-lM-JDv" id="pPa-Au-Zj1"/>
                     </connections>
                 </viewController>
@@ -122,7 +115,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1245" y="80"/>
+            <point key="canvasLocation" x="1219" y="4"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -147,11 +140,12 @@
         <image name="first" width="16" height="16"/>
     </resources>
     <classes>
-        <class className="HawkBusFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusFirstViewController.h"/>
+        <class className="HawkBusClickedOnStopViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusClickedOnStopViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="StopsListView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
             </relationships>
         </class>
         <class className="HawkBusStopViewController" superclassName="UIViewController">
@@ -159,9 +153,6 @@
             <relationships>
                 <relationship kind="outlet" name="stopsTableView" candidateClass="UITableView"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
