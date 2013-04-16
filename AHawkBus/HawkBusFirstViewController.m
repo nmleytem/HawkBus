@@ -2,8 +2,8 @@
 //  HawkBusFirstViewController.m
 //  HawkBus
 //
-//  Created by uicsi10 on 3/25/13.
-//  Copyright (c) 2013 uicsi10. All rights reserved.
+//  Created by Nick & WonJae on 3/25/13.
+//  Copyright (c) 2013 Nick & WonJae. All rights reserved.
 //
 
 #import "HawkBusFirstViewController.h"

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
-               BuildableName = "AHawkBus.app"
+               BuildableName = "HawkBus.app"
                BlueprintName = "HawkBus"
                ReferencedContainer = "container:HawkBus.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
-            BuildableName = "AHawkBus.app"
+            BuildableName = "HawkBus.app"
             BlueprintName = "HawkBus"
             ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
-            BuildableName = "AHawkBus.app"
+            BuildableName = "HawkBus.app"
             BlueprintName = "HawkBus"
             ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
-            BuildableName = "AHawkBus.app"
+            BuildableName = "HawkBus.app"
             BlueprintName = "HawkBus"
             ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
