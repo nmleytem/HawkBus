@@ -1,18 +1,18 @@
 //
-//  AHawkBusFirstViewController.m
-//  AHawkBus
+//  HawkBusFirstViewController.m
+//  HawkBus
 //
 //  Created by uicsi10 on 3/25/13.
 //  Copyright (c) 2013 uicsi10. All rights reserved.
 //
 
-#import "AHawkBusFirstViewController.h"
+#import "HawkBusFirstViewController.h"
 
-@interface AHawkBusFirstViewController ()
+@interface HawkBusFirstViewController ()
 
 @end
 
-@implementation AHawkBusFirstViewController
+@implementation HawkBusFirstViewController
 
 - (void)viewDidLoad
 {

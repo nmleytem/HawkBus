@@ -12,46 +12,45 @@
 		243ECED0170119AC00D3CC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 243ECECF170119AC00D3CC0B /* CoreGraphics.framework */; };
 		243ECED6170119AC00D3CC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 243ECED4170119AC00D3CC0B /* InfoPlist.strings */; };
 		243ECED8170119AC00D3CC0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECED7170119AC00D3CC0B /* main.m */; };
-		243ECEDC170119AC00D3CC0B /* AHawkBusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECEDB170119AC00D3CC0B /* AHawkBusAppDelegate.m */; };
+		243ECEDC170119AC00D3CC0B /* HawkBusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECEDB170119AC00D3CC0B /* HawkBusAppDelegate.m */; };
 		243ECEDE170119AC00D3CC0B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEDD170119AC00D3CC0B /* Default.png */; };
 		243ECEE0170119AC00D3CC0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEDF170119AC00D3CC0B /* Default@2x.png */; };
 		243ECEE2170119AC00D3CC0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEE1170119AC00D3CC0B /* Default-568h@2x.png */; };
 		243ECEE5170119AC00D3CC0B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEE3170119AC00D3CC0B /* MainStoryboard.storyboard */; };
-		243ECEE8170119AC00D3CC0B /* AHawkBusFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECEE7170119AC00D3CC0B /* AHawkBusFirstViewController.m */; };
+		243ECEE8170119AC00D3CC0B /* HawkBusFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECEE7170119AC00D3CC0B /* HawkBusFirstViewController.m */; };
 		243ECEEA170119AC00D3CC0B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEE9170119AC00D3CC0B /* first.png */; };
 		243ECEEC170119AC00D3CC0B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEEB170119AC00D3CC0B /* first@2x.png */; };
-		243ECEEF170119AC00D3CC0B /* AHawkBusSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243ECEEE170119AC00D3CC0B /* AHawkBusSecondViewController.m */; };
 		243ECEF1170119AC00D3CC0B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF0170119AC00D3CC0B /* second.png */; };
 		243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF2170119AC00D3CC0B /* second@2x.png */; };
 		24BA18E517139EB600369C72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E417139EB600369C72 /* MapKit.framework */; };
 		24BA18E817139F4800369C72 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E717139F4800369C72 /* CoreData.framework */; };
+		24CDE15E171CEA0C00766A3A /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CDE15D171CEA0C00766A3A /* bus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		243ECEC7170119AC00D3CC0B /* AHawkBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHawkBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		243ECEC7170119AC00D3CC0B /* HawkBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawkBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		243ECECB170119AC00D3CC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		243ECECD170119AC00D3CC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		243ECECF170119AC00D3CC0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		243ECED3170119AC00D3CC0B /* AHawkBus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AHawkBus-Info.plist"; sourceTree = "<group>"; };
+		243ECED3170119AC00D3CC0B /* HawkBus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HawkBus-Info.plist"; sourceTree = "<group>"; };
 		243ECED5170119AC00D3CC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		243ECED7170119AC00D3CC0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		243ECED9170119AC00D3CC0B /* AHawkBus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AHawkBus-Prefix.pch"; sourceTree = "<group>"; };
-		243ECEDA170119AC00D3CC0B /* AHawkBusAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHawkBusAppDelegate.h; sourceTree = "<group>"; };
-		243ECEDB170119AC00D3CC0B /* AHawkBusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHawkBusAppDelegate.m; sourceTree = "<group>"; };
+		243ECED9170119AC00D3CC0B /* HawkBus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HawkBus-Prefix.pch"; sourceTree = "<group>"; };
+		243ECEDA170119AC00D3CC0B /* HawkBusAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HawkBusAppDelegate.h; sourceTree = "<group>"; };
+		243ECEDB170119AC00D3CC0B /* HawkBusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HawkBusAppDelegate.m; sourceTree = "<group>"; };
 		243ECEDD170119AC00D3CC0B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		243ECEDF170119AC00D3CC0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		243ECEE1170119AC00D3CC0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		243ECEE4170119AC00D3CC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		243ECEE6170119AC00D3CC0B /* AHawkBusFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHawkBusFirstViewController.h; sourceTree = "<group>"; };
-		243ECEE7170119AC00D3CC0B /* AHawkBusFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHawkBusFirstViewController.m; sourceTree = "<group>"; };
+		243ECEE6170119AC00D3CC0B /* HawkBusFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HawkBusFirstViewController.h; sourceTree = "<group>"; };
+		243ECEE7170119AC00D3CC0B /* HawkBusFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HawkBusFirstViewController.m; sourceTree = "<group>"; };
 		243ECEE9170119AC00D3CC0B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		243ECEEB170119AC00D3CC0B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		243ECEED170119AC00D3CC0B /* AHawkBusSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHawkBusSecondViewController.h; sourceTree = "<group>"; };
-		243ECEEE170119AC00D3CC0B /* AHawkBusSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHawkBusSecondViewController.m; sourceTree = "<group>"; };
 		243ECEF0170119AC00D3CC0B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		243ECEF2170119AC00D3CC0B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		24BA18E417139EB600369C72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		24BA18E717139F4800369C72 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		24CDE15D171CEA0C00766A3A /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bus.png; path = ../bus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,7 @@
 		243ECEBC170119AC00D3CC0B = {
 			isa = PBXGroup;
 			children = (
-				243ECED1170119AC00D3CC0B /* AHawkBus */,
+				243ECED1170119AC00D3CC0B /* HawkBus */,
 				243ECECA170119AC00D3CC0B /* Frameworks */,
 				243ECEC8170119AC00D3CC0B /* Products */,
 			);
@@ -82,7 +81,7 @@
 		243ECEC8170119AC00D3CC0B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				243ECEC7170119AC00D3CC0B /* AHawkBus.app */,
+				243ECEC7170119AC00D3CC0B /* HawkBus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,32 +98,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		243ECED1170119AC00D3CC0B /* AHawkBus */ = {
+		243ECED1170119AC00D3CC0B /* HawkBus */ = {
 			isa = PBXGroup;
 			children = (
-				243ECEDA170119AC00D3CC0B /* AHawkBusAppDelegate.h */,
-				243ECEDB170119AC00D3CC0B /* AHawkBusAppDelegate.m */,
+				243ECEDA170119AC00D3CC0B /* HawkBusAppDelegate.h */,
+				243ECEDB170119AC00D3CC0B /* HawkBusAppDelegate.m */,
 				243ECEE3170119AC00D3CC0B /* MainStoryboard.storyboard */,
-				243ECEE6170119AC00D3CC0B /* AHawkBusFirstViewController.h */,
-				243ECEE7170119AC00D3CC0B /* AHawkBusFirstViewController.m */,
+				243ECEE6170119AC00D3CC0B /* HawkBusFirstViewController.h */,
+				243ECEE7170119AC00D3CC0B /* HawkBusFirstViewController.m */,
 				243ECEE9170119AC00D3CC0B /* first.png */,
 				243ECEEB170119AC00D3CC0B /* first@2x.png */,
-				243ECEED170119AC00D3CC0B /* AHawkBusSecondViewController.h */,
-				243ECEEE170119AC00D3CC0B /* AHawkBusSecondViewController.m */,
 				243ECEF0170119AC00D3CC0B /* second.png */,
 				243ECEF2170119AC00D3CC0B /* second@2x.png */,
 				243ECED2170119AC00D3CC0B /* Supporting Files */,
 			);
+			name = HawkBus;
 			path = AHawkBus;
 			sourceTree = "<group>";
 		};
 		243ECED2170119AC00D3CC0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				243ECED3170119AC00D3CC0B /* AHawkBus-Info.plist */,
+				24CDE15D171CEA0C00766A3A /* bus.png */,
+				243ECED3170119AC00D3CC0B /* HawkBus-Info.plist */,
 				243ECED4170119AC00D3CC0B /* InfoPlist.strings */,
 				243ECED7170119AC00D3CC0B /* main.m */,
-				243ECED9170119AC00D3CC0B /* AHawkBus-Prefix.pch */,
+				243ECED9170119AC00D3CC0B /* HawkBus-Prefix.pch */,
 				243ECEDD170119AC00D3CC0B /* Default.png */,
 				243ECEDF170119AC00D3CC0B /* Default@2x.png */,
 				243ECEE1170119AC00D3CC0B /* Default-568h@2x.png */,
@@ -135,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		243ECEC6170119AC00D3CC0B /* AHawkBus */ = {
+		243ECEC6170119AC00D3CC0B /* HawkBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 243ECEF6170119AC00D3CC0B /* Build configuration list for PBXNativeTarget "AHawkBus" */;
+			buildConfigurationList = 243ECEF6170119AC00D3CC0B /* Build configuration list for PBXNativeTarget "HawkBus" */;
 			buildPhases = (
 				243ECEC3170119AC00D3CC0B /* Sources */,
 				243ECEC4170119AC00D3CC0B /* Frameworks */,
@@ -147,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = AHawkBus;
+			name = HawkBus;
 			productName = AHawkBus;
-			productReference = 243ECEC7170119AC00D3CC0B /* AHawkBus.app */;
+			productReference = 243ECEC7170119AC00D3CC0B /* HawkBus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,11 +157,11 @@
 		243ECEBE170119AC00D3CC0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = AHawkBus;
+				CLASSPREFIX = HawkBus;
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = uicsi10;
+				ORGANIZATIONNAME = "Nick & WonJae";
 			};
-			buildConfigurationList = 243ECEC1170119AC00D3CC0B /* Build configuration list for PBXProject "AHawkBus" */;
+			buildConfigurationList = 243ECEC1170119AC00D3CC0B /* Build configuration list for PBXProject "HawkBus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -174,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				243ECEC6170119AC00D3CC0B /* AHawkBus */,
+				243ECEC6170119AC00D3CC0B /* HawkBus */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +192,7 @@
 				243ECEEC170119AC00D3CC0B /* first@2x.png in Resources */,
 				243ECEF1170119AC00D3CC0B /* second.png in Resources */,
 				243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */,
+				24CDE15E171CEA0C00766A3A /* bus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				243ECED8170119AC00D3CC0B /* main.m in Sources */,
-				243ECEDC170119AC00D3CC0B /* AHawkBusAppDelegate.m in Sources */,
-				243ECEE8170119AC00D3CC0B /* AHawkBusFirstViewController.m in Sources */,
-				243ECEEF170119AC00D3CC0B /* AHawkBusSecondViewController.m in Sources */,
+				243ECEDC170119AC00D3CC0B /* HawkBusAppDelegate.m in Sources */,
+				243ECEE8170119AC00D3CC0B /* HawkBusFirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +285,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AHawkBus/AHawkBus-Prefix.pch";
-				INFOPLIST_FILE = "AHawkBus/AHawkBus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "AHawkBus/HawkBus-Prefix.pch";
+				INFOPLIST_FILE = "AHawkBus/HawkBus-Info.plist";
+				PRODUCT_NAME = HawkBus;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -297,9 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AHawkBus/AHawkBus-Prefix.pch";
-				INFOPLIST_FILE = "AHawkBus/AHawkBus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "AHawkBus/HawkBus-Prefix.pch";
+				INFOPLIST_FILE = "AHawkBus/HawkBus-Info.plist";
+				PRODUCT_NAME = HawkBus;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -307,7 +306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		243ECEC1170119AC00D3CC0B /* Build configuration list for PBXProject "AHawkBus" */ = {
+		243ECEC1170119AC00D3CC0B /* Build configuration list for PBXProject "HawkBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				243ECEF4170119AC00D3CC0B /* Debug */,
@@ -316,7 +315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		243ECEF6170119AC00D3CC0B /* Build configuration list for PBXNativeTarget "AHawkBus" */ = {
+		243ECEF6170119AC00D3CC0B /* Build configuration list for PBXNativeTarget "HawkBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				243ECEF7170119AC00D3CC0B /* Debug */,

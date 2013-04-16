@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AHawkBusAppDelegate.h"
+#import "HawkBusAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AHawkBusAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([HawkBusAppDelegate class]));
     }
 }

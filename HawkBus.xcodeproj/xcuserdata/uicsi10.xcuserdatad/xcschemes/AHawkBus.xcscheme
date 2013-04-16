@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
                BuildableName = "AHawkBus.app"
-               BlueprintName = "AHawkBus"
-               ReferencedContainer = "container:AHawkBus.xcodeproj">
+               BlueprintName = "HawkBus"
+               ReferencedContainer = "container:HawkBus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
             BuildableName = "AHawkBus.app"
-            BlueprintName = "AHawkBus"
-            ReferencedContainer = "container:AHawkBus.xcodeproj">
+            BlueprintName = "HawkBus"
+            ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
             BuildableName = "AHawkBus.app"
-            BlueprintName = "AHawkBus"
-            ReferencedContainer = "container:AHawkBus.xcodeproj">
+            BlueprintName = "HawkBus"
+            ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "243ECEC6170119AC00D3CC0B"
             BuildableName = "AHawkBus.app"
-            BlueprintName = "AHawkBus"
-            ReferencedContainer = "container:AHawkBus.xcodeproj">
+            BlueprintName = "HawkBus"
+            ReferencedContainer = "container:HawkBus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
