@@ -22,6 +22,7 @@
 		243ECEEC170119AC00D3CC0B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEEB170119AC00D3CC0B /* first@2x.png */; };
 		243ECEF1170119AC00D3CC0B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF0170119AC00D3CC0B /* second.png */; };
 		243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF2170119AC00D3CC0B /* second@2x.png */; };
+		2459CA27171D0F6E000FA77C /* stop-locations.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2459CA26171D0F6E000FA77C /* stop-locations.rtf */; };
 		24BA18E517139EB600369C72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E417139EB600369C72 /* MapKit.framework */; };
 		24BA18E817139F4800369C72 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E717139F4800369C72 /* CoreData.framework */; };
 		24CDE15E171CEA0C00766A3A /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CDE15D171CEA0C00766A3A /* bus.png */; };
@@ -48,6 +49,7 @@
 		243ECEEB170119AC00D3CC0B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		243ECEF0170119AC00D3CC0B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		243ECEF2170119AC00D3CC0B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		2459CA26171D0F6E000FA77C /* stop-locations.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "stop-locations.rtf"; sourceTree = SOURCE_ROOT; };
 		24BA18E417139EB600369C72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		24BA18E717139F4800369C72 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		24CDE15D171CEA0C00766A3A /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bus.png; path = ../bus.png; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		243ECED2170119AC00D3CC0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2459CA26171D0F6E000FA77C /* stop-locations.rtf */,
 				24CDE15D171CEA0C00766A3A /* bus.png */,
 				243ECED3170119AC00D3CC0B /* HawkBus-Info.plist */,
 				243ECED4170119AC00D3CC0B /* InfoPlist.strings */,
@@ -193,6 +196,7 @@
 				243ECEF1170119AC00D3CC0B /* second.png in Resources */,
 				243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */,
 				24CDE15E171CEA0C00766A3A /* bus.png in Resources */,
+				2459CA27171D0F6E000FA77C /* stop-locations.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
