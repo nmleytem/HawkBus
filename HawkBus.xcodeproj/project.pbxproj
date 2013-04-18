@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24072C40171F8A9C0059BD86 /* HawkBusHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24072C3F171F8A9C0059BD86 /* HawkBusHomeViewController.m */; };
+		24072C44171F8F470059BD86 /* HawkBusRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24072C43171F8F470059BD86 /* HawkBusRouteViewController.m */; };
+		24072C47171F902D0059BD86 /* HawkBusRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 24072C46171F902D0059BD86 /* HawkBusRoute.m */; };
+		24072C4A171F921E0059BD86 /* HawkBusRoutesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 24072C49171F921E0059BD86 /* HawkBusRoutesList.m */; };
 		243ECECC170119AC00D3CC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 243ECECB170119AC00D3CC0B /* UIKit.framework */; };
 		243ECECE170119AC00D3CC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 243ECECD170119AC00D3CC0B /* Foundation.framework */; };
 		243ECED0170119AC00D3CC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 243ECECF170119AC00D3CC0B /* CoreGraphics.framework */; };
@@ -34,6 +38,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24072C3E171F8A9C0059BD86 /* HawkBusHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusHomeViewController.h; sourceTree = "<group>"; };
+		24072C3F171F8A9C0059BD86 /* HawkBusHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusHomeViewController.m; sourceTree = "<group>"; };
+		24072C42171F8F470059BD86 /* HawkBusRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRouteViewController.h; sourceTree = "<group>"; };
+		24072C43171F8F470059BD86 /* HawkBusRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRouteViewController.m; sourceTree = "<group>"; };
+		24072C45171F902D0059BD86 /* HawkBusRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRoute.h; sourceTree = "<group>"; };
+		24072C46171F902D0059BD86 /* HawkBusRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRoute.m; sourceTree = "<group>"; };
+		24072C48171F921E0059BD86 /* HawkBusRoutesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRoutesList.h; sourceTree = "<group>"; };
+		24072C49171F921E0059BD86 /* HawkBusRoutesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRoutesList.m; sourceTree = "<group>"; };
 		243ECEC7170119AC00D3CC0B /* HawkBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawkBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		243ECECB170119AC00D3CC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		243ECECD170119AC00D3CC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,10 +139,18 @@
 				243ECEE7170119AC00D3CC0B /* HawkBusClickedOnStopViewController.m */,
 				249CA83E171DC1B6008EDCEA /* HawkBusStopViewController.h */,
 				249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */,
+				24072C3E171F8A9C0059BD86 /* HawkBusHomeViewController.h */,
+				24072C3F171F8A9C0059BD86 /* HawkBusHomeViewController.m */,
+				24072C42171F8F470059BD86 /* HawkBusRouteViewController.h */,
+				24072C43171F8F470059BD86 /* HawkBusRouteViewController.m */,
 				249CA846171DC565008EDCEA /* HawkBusStopsList.h */,
 				249CA847171DC565008EDCEA /* HawkBusStopsList.m */,
 				249CA849171DC9FF008EDCEA /* HawkBusStop.h */,
 				249CA84A171DC9FF008EDCEA /* HawkBusStop.m */,
+				24072C45171F902D0059BD86 /* HawkBusRoute.h */,
+				24072C46171F902D0059BD86 /* HawkBusRoute.m */,
+				24072C48171F921E0059BD86 /* HawkBusRoutesList.h */,
+				24072C49171F921E0059BD86 /* HawkBusRoutesList.m */,
 				243ECED2170119AC00D3CC0B /* Supporting Files */,
 			);
 			name = HawkBus;
@@ -236,6 +256,10 @@
 				249CA840171DC1B6008EDCEA /* HawkBusStopViewController.m in Sources */,
 				249CA848171DC565008EDCEA /* HawkBusStopsList.m in Sources */,
 				249CA84B171DC9FF008EDCEA /* HawkBusStop.m in Sources */,
+				24072C40171F8A9C0059BD86 /* HawkBusHomeViewController.m in Sources */,
+				24072C44171F8F470059BD86 /* HawkBusRouteViewController.m in Sources */,
+				24072C47171F902D0059BD86 /* HawkBusRoute.m in Sources */,
+				24072C4A171F921E0059BD86 /* HawkBusRoutesList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

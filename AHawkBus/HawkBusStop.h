@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HawkBusStop : NSObject
-@property (strong, nonatomic) NSString * stopName;
-@property (strong, nonatomic) NSString * stopNumber;
+@property (weak, nonatomic) NSString * stopName;
+@property (weak, nonatomic) NSString * stopNumber;
 @property (nonatomic) double stopLatitude;
 @property (nonatomic) double stopLongitude;
 @property (strong, nonatomic) NSArray * stopRoutes;
