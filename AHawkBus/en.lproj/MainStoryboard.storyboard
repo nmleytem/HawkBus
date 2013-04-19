@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="euh-Yk-60a">
-                                <rect key="frame" x="0.0" y="12" width="320" height="191"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                                 <connections>
                                     <outlet property="delegate" destination="16" id="Xjh-QD-4As"/>
                                 </connections>
@@ -173,7 +173,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1145" y="56"/>
+            <point key="canvasLocation" x="1423" y="56"/>
         </scene>
         <!--Navigation Controller - Home-->
         <scene sceneID="KV7-4c-gTK">
