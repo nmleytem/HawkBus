@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HawkBusStopViewController : UIViewController
+#import <MapKit/MapKit.h>
+@interface HawkBusStopViewController : UIViewController //<CLLocationManagerDelegate>
 
 @end

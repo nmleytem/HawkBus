@@ -13,7 +13,7 @@
 #define METERS_PER_MILE 1609.344
 
 @interface HawkBusClickedOnStopViewController ()
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+//@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *StopsListView;
 @end
@@ -28,7 +28,7 @@
     }
     return self;
 }
-- (void) viewWillAppear:(BOOL)animated{
+/**- (void) viewWillAppear:(BOOL)animated{
     // 1
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 41.6607706;
@@ -39,11 +39,11 @@
     
     // 3
     [_mapView setRegion:viewRegion animated:YES];
-}
+}**/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	/*// Do any additional setup after loading the view, typically from a nib.
     //Changes title of nav bar to that of the stop
     self.navigationBar.title = self.nameString;
     //Drops a point on the map of the stop location
@@ -54,7 +54,7 @@
     annotationPoint.coordinate = stopPoint;
     annotationPoint.title = self.nameString;
     annotationPoint.subtitle = self.numberString;
-    [self.mapView addAnnotation:annotationPoint];
+    [self.mapView addAnnotation:annotationPoint];**/
     /**AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:stopPoint];
     [self.mapView addAnnotation:addAnnotation];
     [addAnnotation release];**/

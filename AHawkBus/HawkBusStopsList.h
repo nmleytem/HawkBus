@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HawkBusStop.h"
 
 @interface HawkBusStopsList : NSObject
 - (NSInteger) numberOfStops;
@@ -14,5 +15,8 @@
 - (NSString *) stopNumberForIndex: (int) index;
 - (double) stopLatitudeForIndex: (int) index;
 - (double) stopLongitudeForIndex: (int) index;
-- (NSArray *) stopRoutesArrayForIndex: (int) index;
+- (HawkBusStop *) objectAtIndex: (int) index;
+- (void) sortByProximity: (double) latitude
+    longitude: (double) longitude;
+
 @end

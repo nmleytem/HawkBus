@@ -11,17 +11,16 @@
 
 @interface HawkBusRouteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *routesTable;
-@property (strong, nonatomic) HawkBusRoutesList *routesList;
-
 @end
 
 @implementation HawkBusRouteViewController
+HawkBusRoutesList* routesList;
 
 - (HawkBusRoutesList *) routesList{
-    if(!_routesList){
-        _routesList = [[HawkBusRoutesList alloc] init];
+    if(!routesList){
+        routesList = [[HawkBusRoutesList alloc] init];
     }
-    return _routesList;
+    return routesList;
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {

@@ -10,6 +10,8 @@
 #import "HawkBusStop.h"
 @interface HawkBusStopsList ()
 @property (strong, nonatomic) NSMutableArray * theStops;
+@property (nonatomic) double currentLatitude;
+@property (nonatomic) double currentLongitude;
 @end
 
 @implementation HawkBusStopsList
@@ -17,10 +19,10 @@
 - (NSMutableArray *) theStops{
     if (!_theStops){
         _theStops = [[NSMutableArray alloc] init];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"MacBride Hall" stopNumber:@"0120" stopLatitude:41.66246 stopLongitude:-91.53579 stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts",@"Blue", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Studio Arts", nil]]];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"Clinton & Iowa" stopNumber:@"1030" stopLatitude:41.6607706 stopLongitude:-91.5346899 stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Red", @"Studio Arts", nil]]];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"Downtown Interchange - Schaeffer Hall" stopNumber:@"0001" stopLatitude:41.66017 stopLongitude:-91.5359 stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart", @"blue", @"hwkex", @"hwkdrm", @"inter", @"mayshut", @"mts", @"pentnight", @"pent", @"red", @"studart",nil]]];
-        [_theStops addObject:[[HawkBusStop alloc] initWithInformation: @"Main Library" stopNumber:@"1050" stopLatitude:41.6595409 stopLongitude:-91.53775 stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart", @"hwkdrm", @"inter", @"mts", @"red", @"studart", nil]]];
+        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"MacBride Hall" stopNumber:@"0120" stopLatitude:41.66246 stopLongitude:-91.53579]]; /**stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts",@"Blue", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Studio Arts", nil]]]**/
+        [_theStops addObject:[[HawkBusStop alloc] initWithInformation:@"Clinton & Iowa" stopNumber:@"1030" stopLatitude:41.6607706 stopLongitude:-91.5346899]]; /**stopRoutes:[[NSArray alloc] initWithObjects:@"Art Building West/Studio Arts", @"East Campus Shuttle", @"Hawkeye Express", @"Hawkeye/Interdorm", @"Interdorm", @"Mayflower Shuttle", @"Pentacrest Night", @"Pentacrest", @"Red", @"Studio Arts", nil]]]**/
+        [_theStops addObject:[[HawkBusStop alloc]initWithInformation:@"Downtown Interchange - Schaeffer Hall" stopNumber:@"0001" stopLatitude:41.66017 stopLongitude:-91.5359]]; /**stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart", @"blue", @"hwkex", @"hwkdrm", @"inter", @"mayshut", @"mts", @"pentnight", @"pent", @"red", @"studart",nil]]]**/
+        [_theStops addObject:[[HawkBusStop alloc] initWithInformation: @"Main Library" stopNumber:@"1050" stopLatitude:41.6595409 stopLongitude:-91.53775]] /**stopRoutes:[[NSArray alloc] initWithObjects:@"abwstart", @"hwkdrm", @"inter", @"mts", @"red", @"studart", nil]]]**/;
         /**_theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]
         _theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]
         _theStops addObject:[[HawkBusStop alloc] initWithInformation:<#(NSString *)#> stopNumber:<#(NSString *)#> stopLatitude:<#(double)#> stopLongitude:<#(double)#> stopRoutes:<#(NSArray *)#>]
@@ -111,8 +113,18 @@
     HawkBusStop *stop = [self.theStops objectAtIndex:index];
     return stop.stopLongitude;
 }
-- (NSArray *) stopRoutesArrayForIndex:(int) index{
+/**- (NSArray *) stopRoutesArrayForIndex:(int) index{
     HawkBusStop *stop = [self.theStops objectAtIndex:index];
     return stop.stopRoutes;
+}**/
+- (HawkBusStop *) objectAtIndex: (int) index{
+    return [self.theStops objectAtIndex:index];
 }
+
+- (void) sortByProximity: (double) latitude longitude: (double) longitude{
+    [self.theStops sortUsingComparator:^NSComparisonResult(HawkBusStop *firstStop, HawkBusStop *secondStop) {
+        return [firstStop compare:secondStop latitude:latitude longitude:longitude];
+    }];
+}
+                              
 @end

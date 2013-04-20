@@ -27,13 +27,13 @@
 		243ECEF1170119AC00D3CC0B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF0170119AC00D3CC0B /* second.png */; };
 		243ECEF3170119AC00D3CC0B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243ECEF2170119AC00D3CC0B /* second@2x.png */; };
 		2459CA27171D0F6E000FA77C /* stop-locations.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2459CA26171D0F6E000FA77C /* stop-locations.rtf */; };
+		248728F6172220FD002FC675 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248728F5172220FD002FC675 /* CoreLocation.framework */; };
 		249CA840171DC1B6008EDCEA /* HawkBusStopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */; };
 		249CA848171DC565008EDCEA /* HawkBusStopsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA847171DC565008EDCEA /* HawkBusStopsList.m */; };
 		249CA84B171DC9FF008EDCEA /* HawkBusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CA84A171DC9FF008EDCEA /* HawkBusStop.m */; };
 		249CA852171DEC57008EDCEA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249CA850171DEC57008EDCEA /* AddressBook.framework */; };
 		249CA853171DEC57008EDCEA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249CA851171DEC57008EDCEA /* AddressBookUI.framework */; };
 		24BA18E517139EB600369C72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E417139EB600369C72 /* MapKit.framework */; };
-		24BA18E817139F4800369C72 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BA18E717139F4800369C72 /* CoreData.framework */; };
 		24CDE15E171CEA0C00766A3A /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CDE15D171CEA0C00766A3A /* bus.png */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +67,7 @@
 		243ECEF0170119AC00D3CC0B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		243ECEF2170119AC00D3CC0B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		2459CA26171D0F6E000FA77C /* stop-locations.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "stop-locations.rtf"; sourceTree = SOURCE_ROOT; };
+		248728F5172220FD002FC675 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		249CA83E171DC1B6008EDCEA /* HawkBusStopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusStopViewController.h; sourceTree = "<group>"; };
 		249CA83F171DC1B6008EDCEA /* HawkBusStopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusStopViewController.m; sourceTree = "<group>"; };
 		249CA846171DC565008EDCEA /* HawkBusStopsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusStopsList.h; sourceTree = "<group>"; };
@@ -85,9 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248728F6172220FD002FC675 /* CoreLocation.framework in Frameworks */,
 				249CA852171DEC57008EDCEA /* AddressBook.framework in Frameworks */,
 				249CA853171DEC57008EDCEA /* AddressBookUI.framework in Frameworks */,
-				24BA18E817139F4800369C72 /* CoreData.framework in Frameworks */,
 				24BA18E517139EB600369C72 /* MapKit.framework in Frameworks */,
 				243ECECC170119AC00D3CC0B /* UIKit.framework in Frameworks */,
 				243ECECE170119AC00D3CC0B /* Foundation.framework in Frameworks */,
@@ -118,6 +119,7 @@
 		243ECECA170119AC00D3CC0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				248728F5172220FD002FC675 /* CoreLocation.framework */,
 				249CA850171DEC57008EDCEA /* AddressBook.framework */,
 				249CA851171DEC57008EDCEA /* AddressBookUI.framework */,
 				24BA18E717139F4800369C72 /* CoreData.framework */,
