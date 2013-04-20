@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HawkBusStop.h"
-
+#import <MapKit/MapKit.h>
 @interface HawkBusStopsList : NSObject
 - (NSInteger) numberOfStops;
 - (NSString *) stopNameForIndex: (int) index;
@@ -18,5 +18,5 @@
 - (HawkBusStop *) objectAtIndex: (int) index;
 - (void) sortByProximity: (double) latitude
     longitude: (double) longitude;
-
+- (void) sortByProximityNew: (CLLocation *) location;
 @end

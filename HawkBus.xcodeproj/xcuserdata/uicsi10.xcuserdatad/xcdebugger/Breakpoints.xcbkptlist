@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopsList.m"
-         timestampString = "388112716.984476"
+         timestampString = "388120479.785044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
+         startingLineNumber = "12"
+         endingLineNumber = "12"
          landmarkName = "@implementation HawkBusStopsList"
          landmarkType = "3">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388120008.215008"
+         timestampString = "388126296.929766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388119249.829189"
+         timestampString = "388125098.364548"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388119249.829189"
+         timestampString = "388125098.364548"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopsList.m"
-         timestampString = "388112716.984476"
+         timestampString = "388126296.929766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "@implementation HawkBusStopsList"
          landmarkType = "3">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopsList.m"
-         timestampString = "388110889.880454"
+         timestampString = "388126296.929766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
          landmarkName = "-sortByProximity:longitude:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -20,45 +20,7 @@
 
 @implementation HawkBusStopViewController
 HawkBusStopsList* stopsList;
-/**CLLocationManager *locationManager;
-CLLocation *location;
-BOOL updatingLocation;
-//Location Stuff
 
-- (void)startLocationManager
-{
-    if ([CLLocationManager locationServicesEnabled]) {
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        [locationManager startUpdatingLocation];
-        updatingLocation = YES;
-        
-        [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
-    }
-}
-- (void)stopLocationManager
-{
-    if (updatingLocation) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
-        [locationManager stopUpdatingLocation];
-        locationManager.delegate = nil;
-        updatingLocation = NO;
-    }
-}
-- (void)getLocation{
-    if (updatingLocation) {
-        [self stopLocationManager];
-    } else {
-        location = nil;
-        [self startLocationManager];
-    }
-}
-- (void)didTimeOut:(id)obj
-{
-    if (location == nil) {
-        [self stopLocationManager];
-    }
-}**/
 
 //Dealing with the List and Map
 - (HawkBusStopsList *) stopsList {
@@ -79,6 +41,7 @@ BOOL updatingLocation;
     [_mapView setUserTrackingMode:(MKUserTrackingModeFollow)];
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(_mapView.userLocation.coordinate, METERS_PER_MILE, METERS_PER_MILE);
     [_mapView setRegion:viewRegion animated:YES];
+
 }
 - (void)viewDidLoad
 {
@@ -97,7 +60,8 @@ BOOL updatingLocation;
         annotationPoint.subtitle = [self.stopsList objectAtIndex:i].stopNumber;
         [self.mapView addAnnotation:annotationPoint];
     }
-    [stopsList sortByProximity:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
+    //[stopsList sortByProximity:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
+    [stopsList sortByProximityNew:_mapView.userLocation.location];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -109,9 +73,6 @@ BOOL updatingLocation;
 	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
     childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
     childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
-    childVC.latitude = [self.stopsList stopLatitudeForIndex:selectedCellNum];
-    childVC.longitude = [self.stopsList stopLongitudeForIndex:selectedCellNum];
-    //childVC.stopsArray = [self.stopsList stopRoutesArrayForIndex:selectedCellNum];
 }
 #pragma mark - Table view data source
 
@@ -130,6 +91,7 @@ BOOL updatingLocation;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     NSInteger cellnum = indexPath.row;
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stop"];
 	cell.textLabel.text = [self.stopsList stopNameForIndex:cellnum];
@@ -146,39 +108,7 @@ BOOL updatingLocation;
     return NO;
 }
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -189,34 +119,5 @@ BOOL updatingLocation;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-/**#pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
-{
-    [self stopLocationManager];
-}
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(
-                                                                          CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation %@", newLocation);
-    if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
-        return;
-    }
-    if (newLocation.horizontalAccuracy < 0) {
-        return;
-    }
-    
-    CLLocationDistance distance = MAXFLOAT;
-    if (location != nil) {
-        distance = [newLocation distanceFromLocation:location];
-    }
-    
-    if (location == nil || location.horizontalAccuracy > newLocation.
-        horizontalAccuracy) {
-        location = newLocation;
-        if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
-            NSLog(@"*** We're done!");
-            [self stopLocationManager];
-        }
-    }
-}**/
+
 @end
