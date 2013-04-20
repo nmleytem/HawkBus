@@ -51,16 +51,14 @@ longitude: (double) longitude{
         return NSOrderedSame;
 }
 - (NSComparisonResult) newCompare:(HawkBusStop *)otherStop location:(CLLocation *)location{
-    CLLocation *thisStopLocation;
+    //NSLog(@"Current location: %.8f, %.8f", location.coordinate.latitude, location.coordinate.longitude);
     CLLocationDegrees thisStopLatitude = self.stopLatitude;
     CLLocationDegrees thisStopLongitude = self.stopLongitude;
-    thisStopLocation = [thisStopLocation initWithLatitude:thisStopLatitude longitude:thisStopLongitude];
-    NSLog(@"%.8f, %.8f",thisStopLocation.coordinate.latitude, thisStopLocation.coordinate.longitude);
+    CLLocation *thisStopLocation= [[CLLocation alloc] initWithLatitude:thisStopLatitude longitude:thisStopLongitude];
     CLLocationDistance thisDistance = [location distanceFromLocation:thisStopLocation];
-    CLLocation *otherStopLocation;
     CLLocationDegrees otherStopLatitude = otherStop.stopLatitude;
     CLLocationDegrees otherStopLongitude = otherStop.stopLongitude;
-    otherStopLocation = [otherStopLocation initWithLatitude:otherStopLatitude longitude:otherStopLongitude];
+    CLLocation *otherStopLocation = [[CLLocation alloc] initWithLatitude:otherStopLatitude longitude:otherStopLongitude];
     CLLocationDistance otherDistance = [location distanceFromLocation:otherStopLocation];
     if (thisDistance > otherDistance)
         return NSOrderedDescending;

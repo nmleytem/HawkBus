@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface HawkBusStopViewController : UIViewController //<CLLocationManagerDelegate>
+@interface HawkBusStopViewController : UIViewController
 
 @end
