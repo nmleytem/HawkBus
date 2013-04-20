@@ -71,6 +71,7 @@ BOOL updatingLocation;
     return self;
 }
 //Dealing with the List and Map
+
 - (HawkBusStopsList *) stopsList {
 	if (!stopsList) {
 		stopsList = [[HawkBusStopsList alloc] init];
@@ -108,6 +109,10 @@ BOOL updatingLocation;
         annotationPoint.subtitle = [stopsList objectAtIndex:i].stopNumber;
         [self.mapView addAnnotation:annotationPoint];
     }
+    MKPointAnnotation *currentLocation = [[MKPointAnnotation alloc] init];
+    currentLocation.coordinate = locationManager.location.coordinate;
+    currentLocation.title = @"Current Location";
+    
     //[stopsList sortByProximity:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
     [stopsList sortByProximityNew:locationManager.location];
 }
@@ -171,7 +176,6 @@ BOOL updatingLocation;
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
 {
-    NSLog(@"didFailWithError %@", error);
     if (error.code == kCLErrorLocationUnknown) {
         return;
     }
@@ -180,7 +184,6 @@ BOOL updatingLocation;
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(
                                                                           CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"didUpdateToLocation %@", newLocation);
     if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
         return;
     }
@@ -197,14 +200,12 @@ BOOL updatingLocation;
         horizontalAccuracy) {
         location = newLocation;
         if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
-            NSLog(@"*** We're done!");
             [self stopLocationManager];
             
             if (distance < 1.0) {
                 NSTimeInterval timeInterval = [newLocation.timestamp timeIntervalSinceDate:
                                                location.timestamp];
                 if (timeInterval > 10) {
-                    NSLog(@"*** Force done!");
                     [self stopLocationManager];
                 }
             }

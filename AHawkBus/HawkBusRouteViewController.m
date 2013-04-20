@@ -8,6 +8,7 @@
 
 #import "HawkBusRouteViewController.h"
 #import "HawkBusRoutesList.h"
+#import "HawkBusClickedOnRouteViewController.h"
 
 @interface HawkBusRouteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *routesTable;
@@ -47,6 +48,12 @@ HawkBusRoutesList* routesList;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+/**- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	HawkBusClickedOnRouteViewController * childVC = segue.destinationViewController;
+	/*NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
+    childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
+    childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
+}**/
 
 #pragma mark - Table view data source
 
