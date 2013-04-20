@@ -66,7 +66,7 @@ BOOL updatingLocation;
     {
         locationManager = [[CLLocationManager alloc] init];
         [self getLocation];
-        [stopsList sortByProximityNew:locationManager.location];
+        //[stopsList sortByProximity:locationManager.location];
     }
     return self;
 }
@@ -113,8 +113,7 @@ BOOL updatingLocation;
     currentLocation.coordinate = locationManager.location.coordinate;
     currentLocation.title = @"Current Location";
     
-    //[stopsList sortByProximity:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
-    [stopsList sortByProximityNew:locationManager.location];
+    [stopsList sortByProximity:locationManager.location];
 }
 - (void)didReceiveMemoryWarning
 {

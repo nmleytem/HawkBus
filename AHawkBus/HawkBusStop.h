@@ -18,6 +18,5 @@
 
 - (id) initWithInformation: (NSString *) stopName stopNumber: (NSString *) stopNumber stopLatitude: (double) stopLatitude stopLongitude: (double) stopLongitude;
 - (double) calculateDistanceFromCurrentLocation: (double) latitude longitude: (double) longitude;
-- (NSComparisonResult) compare: (HawkBusStop *) otherStop latitude: (double) latitude longitude: (double) longitude;
-- (NSComparisonResult) newCompare: (HawkBusStop *) otherStop location: (CLLocation *) location;
+- (NSComparisonResult) compare: (HawkBusStop *) otherStop location: (CLLocation *) location;
 @end

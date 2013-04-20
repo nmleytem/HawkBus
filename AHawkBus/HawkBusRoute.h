@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HawkBusRoute : NSObject
-@property (weak, nonatomic) NSString * routeName;
-@property (weak, nonatomic) NSString * routeID;
-//@property (strong, nonatomic) NSArray * stops;
+@property (weak, nonatomic) NSString *routeName;
+@property (weak, nonatomic) NSString *routeID;
+@property (nonatomic) NSArray *routeGeoLocations;
 
-- (id) initWithInformation: (NSString *) routeName routeID: (NSString *) routeID;
+- (id) initWithInformation: (NSString *) routeName routeID: (NSString *) routeID geoLocations: (NSArray *) geoLocations;
 @end

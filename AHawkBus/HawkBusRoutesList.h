@@ -12,5 +12,5 @@
 - (NSInteger) numberOfRoutes;
 - (NSString *) routeNameForIndex: (int) index;
 - (NSString *) routeIDForIndex: (int) index;
-//- (NSArray *) stopsArrayForIndex: (int) index;
+- (NSArray *) locationsArrayForIndex: (int) index;
 @end

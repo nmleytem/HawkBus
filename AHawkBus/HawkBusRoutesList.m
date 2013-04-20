@@ -10,16 +10,17 @@
 #import "HawkBusRoute.h"
 
 @interface HawkBusRoutesList()
-@property (strong, nonatomic) NSMutableArray *theRoutes;
 @end
 
 @implementation HawkBusRoutesList
+NSMutableArray *theRoutes;
+
 - (NSMutableArray *) theRoutes{
-    if(!_theRoutes){
-        _theRoutes = [[NSMutableArray alloc] init];
-        [_theRoutes addObject:[[HawkBusRoute alloc] initWithInformation:@"ABW/Studio Arts" routeID:@"abwstart"]];
+    if(!theRoutes){
+        theRoutes = [[NSMutableArray alloc] init];
+        [theRoutes addObject:[[HawkBusRoute alloc] initWithInformation:@"ABW/Studio Arts" routeID:@"abwstart" geoLocations:[[NSArray alloc] initWithObjects:@"test",nil]]];
     }
-    return _theRoutes;
+    return theRoutes;
 }
 
 - (NSInteger) numberOfRoutes{
@@ -34,5 +35,10 @@
 - (NSString *) routeIDForIndex:(int)index{
     HawkBusRoute *route = [self.theRoutes objectAtIndex:index];
     return route.routeID;
+}
+
+- (NSArray *) locationsArrayForIndex:(int)index{
+    NSArray *locations = [self.theRoutes objectAtIndex:index];
+    return locations;
 }
 @end

@@ -9,12 +9,12 @@
 #import "HawkBusRoute.h"
 
 @implementation HawkBusRoute
-- (id) initWithInformation:(NSString *)routeName routeID:(NSString *)routeID{
+- (id) initWithInformation:(NSString *)routeName routeID:(NSString *)routeID geoLocations: (NSArray *) geoLocations{
     self = [super init];
     if (self){
         _routeName = routeName;
         _routeID = routeID;
-        //_stops = stops;
+        _routeGeoLocations = geoLocations;
     }
     
     return self;
@@ -24,7 +24,7 @@
     if (self){
         _routeName = @"";
         _routeID = @"";
-        //_stops = [[NSArray alloc] init];
+        _routeGeoLocations = [[NSArray alloc] init];
     }
     return self;
 }

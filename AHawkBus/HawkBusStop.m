@@ -36,21 +36,7 @@
     return sqrt(pow((_stopLatitude - latitude), 2.0) + pow((_stopLongitude - longitude),2.0));
 }
 
-- (NSComparisonResult) compare: (HawkBusStop *) otherStop
-latitude: (double) latitude
-longitude: (double) longitude{
-    double thisDistance;
-    double thatDistance;
-    thisDistance = [self calculateDistanceFromCurrentLocation:latitude longitude:longitude];
-    thatDistance = [otherStop calculateDistanceFromCurrentLocation:latitude longitude:longitude ];
-    if (thisDistance > thatDistance)
-        return NSOrderedDescending;
-    else if (thisDistance < thatDistance)
-        return NSOrderedAscending;
-    else
-        return NSOrderedSame;
-}
-- (NSComparisonResult) newCompare:(HawkBusStop *)otherStop location:(CLLocation *)location{
+- (NSComparisonResult) compare:(HawkBusStop *)otherStop location:(CLLocation *)location{
     //NSLog(@"Current location: %.8f, %.8f", location.coordinate.latitude, location.coordinate.longitude);
     CLLocationDegrees thisStopLatitude = self.stopLatitude;
     CLLocationDegrees thisStopLongitude = self.stopLongitude;

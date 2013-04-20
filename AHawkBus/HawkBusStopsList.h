@@ -16,7 +16,5 @@
 - (double) stopLatitudeForIndex: (int) index;
 - (double) stopLongitudeForIndex: (int) index;
 - (HawkBusStop *) objectAtIndex: (int) index;
-- (void) sortByProximity: (double) latitude
-    longitude: (double) longitude;
-- (void) sortByProximityNew: (CLLocation *) location;
+- (void) sortByProximity: (CLLocation *) location;
 @end

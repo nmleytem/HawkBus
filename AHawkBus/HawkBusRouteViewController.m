@@ -50,7 +50,7 @@ HawkBusRoutesList* routesList;
 }
 /**- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	HawkBusClickedOnRouteViewController * childVC = segue.destinationViewController;
-	/*NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
+	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
     childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
     childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
 }**/

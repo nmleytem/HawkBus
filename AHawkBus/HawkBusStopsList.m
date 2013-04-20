@@ -175,15 +175,9 @@ NSMutableArray *theStops;
 - (HawkBusStop *) objectAtIndex: (int) index{
     return [self.theStops objectAtIndex:index];
 }
-
-- (void) sortByProximity: (double) latitude longitude: (double) longitude{
-    [self.theStops sortUsingComparator:^NSComparisonResult(HawkBusStop *firstStop, HawkBusStop *secondStop) {
-        return [firstStop compare:secondStop latitude:latitude longitude:longitude];
-    }];
-}
-- (void) sortByProximityNew:(CLLocation *) location{
+- (void) sortByProximity:(CLLocation *) location{
     [theStops sortUsingComparator:^NSComparisonResult(HawkBusStop *first, HawkBusStop *second) {
-        return [first newCompare:second location:location];
+        return [first compare:second location:location];
     }];
     
 }
