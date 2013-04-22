@@ -48,12 +48,15 @@ HawkBusRoutesList* routesList;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/**- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	HawkBusClickedOnRouteViewController * childVC = segue.destinationViewController;
-	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
-    childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
-    childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
-}**/
+	NSInteger selectedCellNum = [self.routesTable indexPathForSelectedRow].row;
+    childVC.routeName = [routesList routeNameForIndex:selectedCellNum];
+    childVC.center = [routesList centerCoordinateForIndex:selectedCellNum];
+    childVC.neCoordinate = [routesList neCoordinateForIndex:selectedCellNum];
+    childVC.swCoordinate = [routesList swCoordinateForIndex:selectedCellNum];
+    childVC.routeCoordinates = [routesList locationsArrayForIndex:selectedCellNum];
+}
 
 #pragma mark - Table view data source
 

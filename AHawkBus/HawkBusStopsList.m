@@ -7,7 +7,6 @@
 //
 
 #import "HawkBusStopsList.h"
-#import "HawkBusStop.h"
 
 @implementation HawkBusStopsList
 NSMutableArray *theStops;

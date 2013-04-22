@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HawkBusLatitudeLongitude.h"
+#import "HawkBusRoute.h"
+
 
 @interface HawkBusRoutesList : NSObject
 - (NSInteger) numberOfRoutes;
 - (NSString *) routeNameForIndex: (int) index;
 - (NSString *) routeIDForIndex: (int) index;
 - (NSArray *) locationsArrayForIndex: (int) index;
+- (HawkBusLatitudeLongitude *) centerCoordinateForIndex: (int) index;
+- (HawkBusLatitudeLongitude *) neCoordinateForIndex: (int) index;
+- (HawkBusLatitudeLongitude *) swCoordinateForIndex: (int) index;
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HawkBusLatitudeLongitude.h"
 
 @interface HawkBusClickedOnRouteViewController : UIViewController
-
+@property (weak, nonatomic) NSString *routeName;
+@property (nonatomic) NSArray *routeCoordinates;
+@property (nonatomic) HawkBusLatitudeLongitude *center;
+@property (nonatomic) HawkBusLatitudeLongitude *neCoordinate;
+@property (nonatomic) HawkBusLatitudeLongitude *swCoordinate;
 @end

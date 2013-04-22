@@ -187,6 +187,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vYf-5Z-pXa"/>
+                    <connections>
+                        <outlet property="mapView" destination="67F-hh-vz5" id="68b-rt-33P"/>
+                        <outlet property="navigationBar" destination="vYf-5Z-pXa" id="K65-tR-rZ5"/>
+                        <outlet property="stopsList" destination="hay-WR-cHb" id="U2H-73-87Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O4-9d-WkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,38 +405,6 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="HawkBusClickedOnRouteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusClickedOnRouteViewController.h"/>
-        </class>
-        <class className="HawkBusClickedOnStopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusClickedOnStopViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="StopsListView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="HawkBusHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusHomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="favoritesTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="recentlyUsedTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HawkBusRouteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusRouteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="routesTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HawkBusStopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HawkBusStopViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="stopsTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

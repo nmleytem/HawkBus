@@ -9,12 +9,15 @@
 #import "HawkBusRoute.h"
 
 @implementation HawkBusRoute
-- (id) initWithInformation:(NSString *)routeName routeID:(NSString *)routeID geoLocations: (NSArray *) geoLocations{
+- (id) initWithInformation:(NSString *)routeName routeID:(NSString *)routeID geoLocations: (NSArray *) geoLocations center: (HawkBusLatitudeLongitude *) center swCoordinate: (HawkBusLatitudeLongitude *) swCoordinate neCoordinate: (HawkBusLatitudeLongitude *) neCoordinate{
     self = [super init];
     if (self){
         _routeName = routeName;
         _routeID = routeID;
         _routeGeoLocations = geoLocations;
+        _center = center;
+        _swCoordinate = swCoordinate;
+        _neCoordinate = neCoordinate;
     }
     
     return self;
@@ -25,6 +28,9 @@
         _routeName = @"";
         _routeID = @"";
         _routeGeoLocations = [[NSArray alloc] init];
+        _center = [[HawkBusLatitudeLongitude alloc] init];
+        _swCoordinate = [[HawkBusLatitudeLongitude alloc] init];
+        _neCoordinate = [[HawkBusLatitudeLongitude alloc] init];
     }
     return self;
 }
