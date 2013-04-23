@@ -17,4 +17,5 @@
 - (double) stopLongitudeForIndex: (int) index;
 - (HawkBusStop *) objectAtIndex: (int) index;
 - (void) sortByProximity: (CLLocation *) location;
+- (NSMutableArray *) getStopsAlongRoute: (NSString *) routeID;
 @end

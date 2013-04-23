@@ -47,7 +47,6 @@ BOOL updatingLocation;
 }
 - (void)didTimeOut:(id)obj
 {
-    NSLog(@"*** Time out");
     if (location == nil) {
         [self stopLocationManager];
     }
@@ -184,9 +183,13 @@ BOOL updatingLocation;
                                                                           CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
+        [stopsList sortByProximity:location];
+        [self.stopsTableView reloadData];
         return;
     }
     if (newLocation.horizontalAccuracy < 0) {
+        [stopsList sortByProximity:location];
+        [self.stopsTableView reloadData];
         return;
     }
     
@@ -210,6 +213,8 @@ BOOL updatingLocation;
             }
         }
     }
+    [stopsList sortByProximity:location];
+    [self.stopsTableView reloadData];
 }
 
 

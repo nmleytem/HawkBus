@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HawkBusLatitudeLongitude.h"
+#import "HawkBusStopsList.h"
 
 @interface HawkBusRoute : NSObject
 @property (weak, nonatomic) NSString *routeName;

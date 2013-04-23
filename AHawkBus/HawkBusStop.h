@@ -14,9 +14,9 @@
 @property (weak, nonatomic) NSString * stopNumber;
 @property (nonatomic) double stopLatitude;
 @property (nonatomic) double stopLongitude;
-//@property (strong, nonatomic) NSArray * stopRoutes;
+@property (nonatomic) NSArray * stopRoutes;
 
-- (id) initWithInformation: (NSString *) stopName stopNumber: (NSString *) stopNumber stopLatitude: (double) stopLatitude stopLongitude: (double) stopLongitude;
+- (id) initWithInformation: (NSString *) stopName stopNumber: (NSString *) stopNumber stopLatitude: (double) stopLatitude stopLongitude: (double) stopLongitude stopRoutes: (NSArray *) stopRoutes;
 - (double) calculateDistanceFromCurrentLocation: (double) latitude longitude: (double) longitude;
 - (NSComparisonResult) compare: (HawkBusStop *) otherStop location: (CLLocation *) location;
 @end

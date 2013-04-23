@@ -7,19 +7,21 @@
 //
 
 #import "HawkBusClickedOnRouteViewController.h"
+#import "HawkBusClickedOnStopViewController.h"
 #import <MapKit/MapKit.h>
 #import <MapKit/MKPolyline.h>
-#import "HawkBusStopsList.h"
-#define METERS_PER_MILE 1609.344
+#import "HawkBusRoute.h"
+
 
 @interface HawkBusClickedOnRouteViewController ()<UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITableView *stopsList;
+@property (weak, nonatomic) IBOutlet UITableView *stopsTableView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @end
 
 @implementation HawkBusClickedOnRouteViewController
-HawkBusStopsList *routesList;
+HawkBusStopsList *stopsList;
+NSMutableArray *stopsAlongRoute;
 CLLocationManager *locationManager;
 CLLocation *location;
 BOOL updatingLocation;
@@ -43,7 +45,9 @@ BOOL updatingLocation;
         [locationManager stopUpdatingLocation];
         locationManager.delegate = nil;
         updatingLocation = NO;
+        
     }
+    [self.stopsTableView reloadData];
 }
 - (void)didTimeOut:(id)obj
 {
@@ -65,10 +69,16 @@ BOOL updatingLocation;
     {
         locationManager = [[CLLocationManager alloc] init];
         [self getLocation];
-        //[stopsList sortByProximity:locationManager.location];
     }
     return self;
 }
+- (HawkBusStopsList *) stopsList {
+	if (!stopsList) {
+		stopsList = [[HawkBusStopsList alloc] init];
+	}
+	return  stopsList;
+}
+
 - (void) viewWillAppear:(BOOL)animated{
     CLLocationCoordinate2D center;
     center.latitude = self.center.latitude;
@@ -106,15 +116,27 @@ BOOL updatingLocation;
         MKPolyline *routeLine = [MKPolyline polylineWithCoordinates:coords count:count];
         [_mapView addOverlay:routeLine];
     }
+    [stopsList sortByProximity:locationManager.location];
+    stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
 }
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	HawkBusClickedOnStopViewController * childVC = segue.destinationViewController;
+	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
+    HawkBusStop *stop = [[HawkBusStop alloc] init];
+    stop = [stopsAlongRoute objectAtIndex:selectedCellNum];
+    childVC.nameString = stop.stopName;
+    childVC.numberString = stop.stopNumber;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - Table view data source
+- (IBAction) refreshPushed:(id)sender{
+}
 
+
+#pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -123,18 +145,20 @@ BOOL updatingLocation;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
     // Return the number of rows in the section.
-    return 1;
+    return [stopsAlongRoute count];
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //NSInteger cellnum = indexPath.row;
+    NSInteger cellnum = indexPath.row;
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stop"];
-	/*cell.textLabel.text = [stopsList stopNameForIndex:cellnum];
-	cell.detailTextLabel.text = [stopsList stopNumberForIndex:cellnum];*/
+    HawkBusStop *currentStop = [[HawkBusStop alloc] init];
+    currentStop = [stopsAlongRoute objectAtIndex:cellnum];
+	cell.textLabel.text = currentStop.stopName;
+	cell.detailTextLabel.text = currentStop.stopNumber;
     
     return cell;
 }
@@ -158,6 +182,7 @@ BOOL updatingLocation;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
 {
@@ -170,9 +195,11 @@ BOOL updatingLocation;
                                                                           CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
+        [self.stopsTableView reloadData];
         return;
     }
     if (newLocation.horizontalAccuracy < 0) {
+        [self.stopsTableView reloadData];
         return;
     }
     

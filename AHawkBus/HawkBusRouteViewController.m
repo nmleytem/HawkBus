@@ -52,6 +52,7 @@ HawkBusRoutesList* routesList;
 	HawkBusClickedOnRouteViewController * childVC = segue.destinationViewController;
 	NSInteger selectedCellNum = [self.routesTable indexPathForSelectedRow].row;
     childVC.routeName = [routesList routeNameForIndex:selectedCellNum];
+    childVC.routeID = [routesList routeIDForIndex:selectedCellNum];
     childVC.center = [routesList centerCoordinateForIndex:selectedCellNum];
     childVC.neCoordinate = [routesList neCoordinateForIndex:selectedCellNum];
     childVC.swCoordinate = [routesList swCoordinateForIndex:selectedCellNum];

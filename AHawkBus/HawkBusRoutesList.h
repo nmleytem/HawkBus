@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HawkBusStop.h"
 #import "HawkBusLatitudeLongitude.h"
+#import "HawkBusStopsList.h"
 #import "HawkBusRoute.h"
 
 
@@ -19,4 +21,5 @@
 - (HawkBusLatitudeLongitude *) centerCoordinateForIndex: (int) index;
 - (HawkBusLatitudeLongitude *) neCoordinateForIndex: (int) index;
 - (HawkBusLatitudeLongitude *) swCoordinateForIndex: (int) index;
+//- (NSMutableArray *) stopsListForIndex: (int) index;
 @end
