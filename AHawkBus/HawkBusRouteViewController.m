@@ -17,7 +17,7 @@
 @end
 
 @implementation HawkBusRouteViewController
-NSMutableArray *stopsAlongRoute;
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))

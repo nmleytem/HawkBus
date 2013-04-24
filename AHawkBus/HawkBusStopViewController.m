@@ -20,44 +20,6 @@
 
 @implementation HawkBusStopViewController
 
-/*CLLocation *location;
-BOOL updatingLocation;
-
-//Methods for getting location
-- (void)startLocationManager
-{
-    if ([CLLocationManager locationServicesEnabled]) {
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        [locationManager startUpdatingLocation];
-        updatingLocation = YES;
-        
-        [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
-    }
-}
-- (void)stopLocationManager
-{
-    if (updatingLocation) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
-        [locationManager stopUpdatingLocation];
-        locationManager.delegate = nil;
-        updatingLocation = NO;
-    }
-}
-- (void)didTimeOut:(id)obj
-{
-    if (location == nil) {
-        [self stopLocationManager];
-    }
-}
-- (void)getLocation{
-    if (updatingLocation) {
-        [self stopLocationManager];
-    } else {
-        location = nil;
-        [self startLocationManager];
-    }
-}*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))
@@ -153,51 +115,4 @@ BOOL updatingLocation;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-
-/*#pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
-{
-    if (error.code == kCLErrorLocationUnknown) {
-        return;
-    }
-    [self stopLocationManager];
-}
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(
-                                                                          CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
-        [stopsList sortByProximity:location];
-        [self.stopsTableView reloadData];
-        return;
-    }
-    if (newLocation.horizontalAccuracy < 0) {
-        [stopsList sortByProximity:location];
-        [self.stopsTableView reloadData];
-        return;
-    }
-    
-    CLLocationDistance distance = MAXFLOAT;
-    if (location != nil) {
-        distance = [newLocation distanceFromLocation:location];
-    }
-    
-    if (location == nil || location.horizontalAccuracy > newLocation.
-        horizontalAccuracy) {
-        location = newLocation;
-        if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
-            [self stopLocationManager];
-            
-            if (distance < 1.0) {
-                NSTimeInterval timeInterval = [newLocation.timestamp timeIntervalSinceDate:
-                                               location.timestamp];
-                if (timeInterval > 10) {
-                    [self stopLocationManager];
-                }
-            }
-        }
-    }
-    [self.stopsTableView reloadData];
-}*/
-
-
 @end
