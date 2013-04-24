@@ -8,13 +8,17 @@
 
 #import "HawkBusAppDelegate.h"
 
-
+@interface HawkBusAppDelegate () <CLLocationManagerDelegate>
+@end
 @implementation HawkBusAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     stopsList = [HawkBusStopsList new];
     routesList = [HawkBusRoutesList new];
+    locationManager = [CLLocationManager new];
+    [self getLocation];
+    stopsAlongRoute = [NSMutableArray new];
     // Override point for customization after application launch.
 
     return YES;
@@ -47,4 +51,79 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//Methods for getting location
+- (void)startLocationManager
+{
+    if ([CLLocationManager locationServicesEnabled]) {
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        [locationManager startUpdatingLocation];
+        updatingLocation = YES;
+        
+        [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:10];
+    }
+}
+- (void)stopLocationManager
+{
+    if (updatingLocation) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
+        [locationManager stopUpdatingLocation];
+        locationManager.delegate = nil;
+        updatingLocation = NO;
+        [stopsList sortByProximity:locationManager.location];
+    }
+}
+- (void)didTimeOut:(id)obj
+{
+    if (location == nil) {
+        [self stopLocationManager];
+    }
+}
+- (void)getLocation{
+    if (updatingLocation) {
+        [self stopLocationManager];
+    } else {
+        location = nil;
+        [self startLocationManager];
+    }
+}
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
+{
+    if (error.code == kCLErrorLocationUnknown) {
+        return;
+    }
+    [self stopLocationManager];
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(
+                                                                          CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
+        return;
+    }
+    if (newLocation.horizontalAccuracy < 0) {
+        return;
+    }
+    
+    CLLocationDistance distance = MAXFLOAT;
+    if (location != nil) {
+        distance = [newLocation distanceFromLocation:location];
+    }
+    
+    if (location == nil || location.horizontalAccuracy > newLocation.
+        horizontalAccuracy) {
+        location = newLocation;
+        if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
+            [self stopLocationManager];
+            
+            if (distance < 1.0) {
+                NSTimeInterval timeInterval = [newLocation.timestamp timeIntervalSinceDate:
+                                               location.timestamp];
+                if (timeInterval > 10) {
+                    [self stopLocationManager];
+                }
+            }
+        }
+    }
+}
 @end

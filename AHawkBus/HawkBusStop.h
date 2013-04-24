@@ -19,4 +19,5 @@
 - (id) initWithInformation: (NSString *) stopName stopNumber: (NSString *) stopNumber stopLatitude: (double) stopLatitude stopLongitude: (double) stopLongitude stopRoutes: (NSArray *) stopRoutes;
 - (double) calculateDistanceFromCurrentLocation: (double) latitude longitude: (double) longitude;
 - (NSComparisonResult) compare: (HawkBusStop *) otherStop location: (CLLocation *) location;
+- (NSArray *) getStopRoutes;
 @end

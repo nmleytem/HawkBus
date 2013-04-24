@@ -13,16 +13,15 @@
 
 
 
-@interface HawkBusClickedOnRouteViewController ()<UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate>
+@interface HawkBusClickedOnRouteViewController ()<UITableViewDataSource, UITableViewDelegate>//,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *stopsTableView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @end
 
 @implementation HawkBusClickedOnRouteViewController
-NSMutableArray *stopsAlongRoute;
-CLLocationManager *locationManager;
-CLLocation *location;
+//NSMutableArray *stopsAlongRoute;
+/*CLLocation *location;
 BOOL updatingLocation;
 
 //Methods for getting location
@@ -56,18 +55,20 @@ BOOL updatingLocation;
 - (void)getLocation{
     if (updatingLocation) {
         [self stopLocationManager];
-        //[self.stopsTableView reloadData];
+        [self.stopsTableView reloadData];
     } else {
         location = nil;
         [self startLocationManager];
     }
-}
+}*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        locationManager = [[CLLocationManager alloc] init];
-        [self getLocation];
+        //[self getLocation];
+        //[stopsList sortByProximity:locationManager.location];
+        //stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
+        
     }
     return self;
 }
@@ -81,6 +82,7 @@ BOOL updatingLocation;
     coordinateSpan.longitudeDelta = (self.neCoordinate.longitude - self.swCoordinate.longitude);
     MKCoordinateRegion viewRegion = MKCoordinateRegionMake(center,coordinateSpan);
     [_mapView setRegion:viewRegion animated:YES];
+    //stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
 }
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
     
@@ -107,8 +109,7 @@ BOOL updatingLocation;
         MKPolyline *routeLine = [MKPolyline polylineWithCoordinates:coords count:count];
         [_mapView addOverlay:routeLine];
     }
-    [stopsList sortByProximity:locationManager.location];
-    stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
+    
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	HawkBusClickedOnStopViewController * childVC = segue.destinationViewController;
@@ -118,6 +119,7 @@ BOOL updatingLocation;
     childVC.nameString = stop.stopName;
     childVC.numberString = stop.stopNumber;
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -145,7 +147,7 @@ BOOL updatingLocation;
 {
     NSInteger cellnum = indexPath.row;
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stop"];
-    HawkBusStop *currentStop = [[HawkBusStop alloc] init];
+    HawkBusStop *currentStop = [HawkBusStop new];
     currentStop = [stopsAlongRoute objectAtIndex:cellnum];
 	cell.textLabel.text = currentStop.stopName;
 	cell.detailTextLabel.text = currentStop.stopNumber;
@@ -173,7 +175,7 @@ BOOL updatingLocation;
      */
 }
 
-#pragma mark - CLLocationManagerDelegate
+/*#pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
 {
     if (error.code == kCLErrorLocationUnknown) {
@@ -215,5 +217,5 @@ BOOL updatingLocation;
             }
         }
     }
-}
+}*/
 @end

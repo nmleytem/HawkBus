@@ -178,13 +178,19 @@ NSMutableArray *theStops;
 - (HawkBusStop *) objectAtIndex: (int) index{
     return [self.theStops objectAtIndex:index];
 }
+
+
 - (void) sortByProximity:(CLLocation *) location{
     [theStops sortUsingComparator:^NSComparisonResult(HawkBusStop *first, HawkBusStop *second) {
         return [first compare:second location:location];
     }];
     
 }
-- (NSMutableArray *) getStopsAlongRoute:(NSString *)routeID{
+- (HawkBusStop *) stopForIndex:(int)index{
+    HawkBusStop *stop = [self.theStops objectAtIndex:index];
+    return stop;
+}
+/*- (NSMutableArray *) getStopsAlongRoute:(NSString *)routeID{
     NSMutableArray *theStopsAlongRoute;
     theStopsAlongRoute = [[NSMutableArray alloc] init];
     if(theStops){
@@ -197,6 +203,6 @@ NSMutableArray *theStops;
         }
     }
     return theStopsAlongRoute;
-}
+}*/
                           
 @end

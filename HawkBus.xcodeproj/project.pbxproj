@@ -44,7 +44,7 @@
 		24072C3F171F8A9C0059BD86 /* HawkBusHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusHomeViewController.m; sourceTree = "<group>"; };
 		24072C42171F8F470059BD86 /* HawkBusRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRouteViewController.h; sourceTree = "<group>"; };
 		24072C43171F8F470059BD86 /* HawkBusRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRouteViewController.m; sourceTree = "<group>"; };
-		24072C45171F902D0059BD86 /* HawkBusRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRoute.h; sourceTree = "<group>"; };
+		24072C45171F902D0059BD86 /* HawkBusRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HawkBusRoute.h; path = AHawkBus/HawkBusRoute.h; sourceTree = "<group>"; };
 		24072C46171F902D0059BD86 /* HawkBusRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRoute.m; sourceTree = "<group>"; };
 		24072C48171F921E0059BD86 /* HawkBusRoutesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HawkBusRoutesList.h; sourceTree = "<group>"; };
 		24072C49171F921E0059BD86 /* HawkBusRoutesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HawkBusRoutesList.m; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 				243ECED1170119AC00D3CC0B /* HawkBus */,
 				243ECECA170119AC00D3CC0B /* Frameworks */,
 				243ECEC8170119AC00D3CC0B /* Products */,
+				24072C45171F902D0059BD86 /* HawkBusRoute.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +158,6 @@
 				249CA847171DC565008EDCEA /* HawkBusStopsList.m */,
 				249CA849171DC9FF008EDCEA /* HawkBusStop.h */,
 				249CA84A171DC9FF008EDCEA /* HawkBusStop.m */,
-				24072C45171F902D0059BD86 /* HawkBusRoute.h */,
 				24072C46171F902D0059BD86 /* HawkBusRoute.m */,
 				24072C48171F921E0059BD86 /* HawkBusRoutesList.h */,
 				24072C49171F921E0059BD86 /* HawkBusRoutesList.m */,

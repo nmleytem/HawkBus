@@ -12,15 +12,15 @@
 #import "hawkBusStop.h"
 
 #define METERS_PER_MILE 1609.344
-@interface HawkBusStopViewController ()<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
+@interface HawkBusStopViewController ()<UITableViewDataSource, UITableViewDelegate>//, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *stopsTableView;
 @end
 
 @implementation HawkBusStopViewController
-CLLocationManager *locationManager;
-CLLocation *location;
+
+/*CLLocation *location;
 BOOL updatingLocation;
 
 //Methods for getting location
@@ -57,14 +57,14 @@ BOOL updatingLocation;
         location = nil;
         [self startLocationManager];
     }
-}
+}*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        locationManager = [[CLLocationManager alloc] init];
-        [self getLocation];
+        //[self getLocation];
         //[stopsList sortByProximity:locationManager.location];
+        //[self.stopsTableView reloadData];
     }
     return self;
 }
@@ -86,16 +86,15 @@ BOOL updatingLocation;
         CLLocationCoordinate2D  stopPoint;
         stopPoint.latitude = [stopsList objectAtIndex:i].stopLatitude;
         stopPoint.longitude = [stopsList objectAtIndex:i].stopLongitude;
-        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+        MKPointAnnotation *annotationPoint = [MKPointAnnotation new];
         annotationPoint.coordinate = stopPoint;
         annotationPoint.title = [stopsList objectAtIndex:i].stopName;
         annotationPoint.subtitle = [stopsList objectAtIndex:i].stopNumber;
         [self.mapView addAnnotation:annotationPoint];
     }
-    MKPointAnnotation *currentLocation = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation *currentLocation = [MKPointAnnotation new];
     currentLocation.coordinate = locationManager.location.coordinate;
     currentLocation.title = @"Current Location";
-    
     [stopsList sortByProximity:locationManager.location];
 }
 - (void)didReceiveMemoryWarning
@@ -155,7 +154,7 @@ BOOL updatingLocation;
      */
 }
 
-#pragma mark - CLLocationManagerDelegate
+/*#pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError*)error
 {
     if (error.code == kCLErrorLocationUnknown) {
@@ -197,9 +196,8 @@ BOOL updatingLocation;
             }
         }
     }
-    [stopsList sortByProximity:location];
     [self.stopsTableView reloadData];
-}
+}*/
 
 
 @end

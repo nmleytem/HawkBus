@@ -19,6 +19,5 @@
 @property (nonatomic) HawkBusLatitudeLongitude *center;
 @property (nonatomic) HawkBusLatitudeLongitude *neCoordinate;
 @property (nonatomic) HawkBusLatitudeLongitude *swCoordinate;
-//@property (nonatomic) NSMutableArray *stopsAlongRoute;
 - (IBAction)refreshPushed:(id)sender;
 @end

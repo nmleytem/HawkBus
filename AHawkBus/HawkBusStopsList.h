@@ -11,11 +11,12 @@
 #import <MapKit/MapKit.h>
 @interface HawkBusStopsList : NSObject
 - (NSInteger) numberOfStops;
+- (HawkBusStop *) stopForIndex: (int) index;
 - (NSString *) stopNameForIndex: (int) index;
 - (NSString *) stopNumberForIndex: (int) index;
 - (double) stopLatitudeForIndex: (int) index;
 - (double) stopLongitudeForIndex: (int) index;
 - (HawkBusStop *) objectAtIndex: (int) index;
 - (void) sortByProximity: (CLLocation *) location;
-- (NSMutableArray *) getStopsAlongRoute: (NSString *) routeID;
+//- (NSMutableArray *) getStopsAlongRoute: (NSString *) routeID;
 @end

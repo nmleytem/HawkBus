@@ -13,10 +13,22 @@
 
 @interface HawkBusRouteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *routesTable;
++ (void) getStopsAlongRoute: (NSString *) routeID;
 @end
 
 @implementation HawkBusRouteViewController
 NSMutableArray *stopsAlongRoute;
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        //[self getLocation];
+        [stopsList sortByProximity:locationManager.location];
+        //stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
+        
+    }
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,9 +64,23 @@ NSMutableArray *stopsAlongRoute;
     childVC.neCoordinate = [routesList neCoordinateForIndex:selectedCellNum];
     childVC.swCoordinate = [routesList swCoordinateForIndex:selectedCellNum];
     childVC.routeCoordinates = [routesList locationsArrayForIndex:selectedCellNum];
-    
+    [HawkBusRouteViewController getStopsAlongRoute:[routesList routeIDForIndex:selectedCellNum]];
 }
 
++ (void) getStopsAlongRoute: (NSString *) routeID{
+    NSMutableArray *stopsAlongThisRoute;
+    stopsAlongThisRoute = [NSMutableArray new];
+    for(int i = 0; i < [stopsList numberOfStops]; i++){
+        HawkBusStop *curStop = [stopsList stopForIndex:i];
+        for(int j = 0; j < [[curStop getStopRoutes] count]; j++){
+            if (routeID == [[curStop getStopRoutes] objectAtIndex:j]){
+                [stopsAlongThisRoute addObject:curStop];
+            }
+        }
+    }
+    stopsAlongRoute = [NSMutableArray new];
+    stopsAlongRoute = stopsAlongThisRoute;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

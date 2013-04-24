@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "HawkBusStopsList.h"
 #import "HawkBusRoutesList.h"
+#import <MapKit/MapKit.h>
 
 HawkBusStopsList *stopsList;
 HawkBusRoutesList *routesList;
+CLLocationManager *locationManager;
+CLLocation *location;
+BOOL updatingLocation;
+NSMutableArray *stopsAlongRoute;
+
 @interface HawkBusAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

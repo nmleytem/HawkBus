@@ -32,6 +32,10 @@
     }
     return self;
 }
+
+- (NSArray *) getStopRoutes{
+    return _stopRoutes;
+}
 - (double) calculateDistanceFromCurrentLocation:(double)latitude longitude:(double)longitude{
     return sqrt(pow((_stopLatitude - latitude), 2.0) + pow((_stopLongitude - longitude),2.0));
 }

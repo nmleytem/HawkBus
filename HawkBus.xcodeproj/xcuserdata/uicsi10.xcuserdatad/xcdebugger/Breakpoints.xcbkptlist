@@ -8,24 +8,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopsList.m"
-         timestampString = "388465239.306207"
+         timestampString = "388475694.447742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "10"
-         endingLineNumber = "10"
-         landmarkName = "@implementation HawkBusStopsList"
-         landmarkType = "3">
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "-theStops"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388465239.306207"
+         timestampString = "388473128.520252"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,7 +34,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388465239.306207"
+         timestampString = "388468982.654312"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "92"
@@ -47,7 +47,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopViewController.m"
-         timestampString = "388465239.306207"
+         timestampString = "388468982.654312"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "85"
@@ -60,13 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusStopsList.m"
-         timestampString = "388465239.306207"
+         timestampString = "388477605.293853"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
-         landmarkName = "@implementation HawkBusStopsList"
-         landmarkType = "3">
+         startingLineNumber = "213"
+         endingLineNumber = "213">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -86,11 +84,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusRoutesList.m"
-         timestampString = "388381733.67128"
+         timestampString = "388471660.654082"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
          landmarkName = "-theRoutes"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +97,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AHawkBus/HawkBusRouteViewController.m"
-         timestampString = "388465239.306207"
+         timestampString = "388477605.293853"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -118,6 +116,19 @@
          startingLineNumber = "1033"
          endingLineNumber = "1033"
          landmarkName = "-startRequest"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AHawkBus/HawkBusStopsList.m"
+         timestampString = "388475658.57747"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "15"
+         endingLineNumber = "15"
+         landmarkName = "-theStops"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
