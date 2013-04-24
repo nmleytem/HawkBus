@@ -10,6 +10,7 @@
 #import "HawkBusClickedOnStopViewController.h"
 #import <MapKit/MapKit.h>
 #import <MapKit/MKPolyline.h>
+#import <MapKit/MKCircle.h>
 
 
 
@@ -85,12 +86,19 @@ BOOL updatingLocation;
     //stopsAlongRoute = [stopsList getStopsAlongRoute:_routeID];
 }
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
-    
-    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
-    polylineView.strokeColor = [UIColor greenColor];
-    polylineView.lineWidth = 3.0;
-    
-    return polylineView;
+    if([overlay isKindOfClass:[MKPolyline class]]){
+        MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+        polylineView.strokeColor = [UIColor greenColor];
+        polylineView.lineWidth = 3.0;
+        return polylineView;
+    }
+    else{
+        MKCircleView *pointCircleView = [[MKCircleView alloc]initWithOverlay:overlay];
+        pointCircleView.strokeColor = [UIColor blueColor];
+        pointCircleView.lineWidth = 3;
+        pointCircleView.alpha = .7;
+        return pointCircleView;
+    }
 }
 
 - (void)viewDidLoad
@@ -104,13 +112,22 @@ BOOL updatingLocation;
         for (int j = 0; j < count; j++){
             HawkBusLatitudeLongitude *latLong = [[self.routeCoordinates objectAtIndex:i] objectAtIndex:j];
             coords[j] = CLLocationCoordinate2DMake(latLong.latitude,latLong.longitude);
-
         }
         MKPolyline *routeLine = [MKPolyline polylineWithCoordinates:coords count:count];
         [_mapView addOverlay:routeLine];
     }
-    
+        for(HawkBusStop *stop in stopsAlongRoute){
+            CLLocationCoordinate2D stopLocation;
+            HawkBusLatitudeLongitude *latLong = [[HawkBusLatitudeLongitude alloc] initWithCoordinates:stop.stopLatitude longitude:stop.stopLongitude];
+            stopLocation = CLLocationCoordinate2DMake(latLong.latitude,latLong.longitude);
+            CLLocationDistance circleRadius = 7.0;
+            MKCircle *stopCircle = [MKCircle circleWithCenterCoordinate:stopLocation radius:circleRadius];
+            [stopCircle setTitle:stop.stopName];
+            [stopCircle setSubtitle:stop.stopNumber];
+            [_mapView addOverlay:stopCircle];
+        }
 }
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	HawkBusClickedOnStopViewController * childVC = segue.destinationViewController;
 	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
