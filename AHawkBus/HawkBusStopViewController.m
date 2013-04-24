@@ -19,7 +19,6 @@
 @end
 
 @implementation HawkBusStopViewController
-HawkBusStopsList* stopsList;
 CLLocationManager *locationManager;
 CLLocation *location;
 BOOL updatingLocation;
@@ -71,22 +70,7 @@ BOOL updatingLocation;
 }
 //Dealing with the List and Map
 
-- (HawkBusStopsList *) stopsList {
-	if (!stopsList) {
-		stopsList = [[HawkBusStopsList alloc] init];
-	}
-	return  stopsList;
-}
 - (void) viewWillAppear:(BOOL)animated{
-    // 1
-    //CLLocationCoordinate2D zoomLocation;
-    //zoomLocation.latitude = _mapView.userLocation.coordinate.latitude;
-    //zoomLocation.longitude= _mapView.userLocation.coordinate.longitude;
-    
-    // 2
-    
-    // 3
-    //[_mapView setUserTrackingMode:(MKUserTrackingModeFollow)];
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(locationManager.location.coordinate, METERS_PER_MILE/2, METERS_PER_MILE/2);
     [_mapView setRegion:viewRegion animated:YES];
 
@@ -98,7 +82,7 @@ BOOL updatingLocation;
 	// Do any additional setup after loading the view, typically from a nib.
     
     //Drops a point on the map of the stop locations
-    for (int i = 0; i < self.stopsList.numberOfStops; i++){
+    for (int i = 0; i < [stopsList numberOfStops]; i++){
         CLLocationCoordinate2D  stopPoint;
         stopPoint.latitude = [stopsList objectAtIndex:i].stopLatitude;
         stopPoint.longitude = [stopsList objectAtIndex:i].stopLongitude;
@@ -122,8 +106,8 @@ BOOL updatingLocation;
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	HawkBusClickedOnStopViewController * childVC = segue.destinationViewController;
 	NSInteger selectedCellNum = [self.stopsTableView indexPathForSelectedRow].row;
-    childVC.nameString = [self.stopsList stopNameForIndex:selectedCellNum];
-    childVC.numberString = [self.stopsList stopNumberForIndex:selectedCellNum];
+    childVC.nameString = [stopsList stopNameForIndex:selectedCellNum];
+    childVC.numberString = [stopsList stopNumberForIndex:selectedCellNum];
 }
 #pragma mark - Table view data source
 
@@ -136,7 +120,7 @@ BOOL updatingLocation;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.stopsList numberOfStops];
+    return [stopsList numberOfStops];
 
 }
 

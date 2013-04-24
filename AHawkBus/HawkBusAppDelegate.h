@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HawkBusStopsList.h"
+#import "HawkBusRoutesList.h"
 
+HawkBusStopsList *stopsList;
+HawkBusRoutesList *routesList;
 @interface HawkBusAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

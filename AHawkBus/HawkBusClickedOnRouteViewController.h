@@ -10,14 +10,15 @@
 #import "HawkBusLatitudeLongitude.h"
 #import "HawkBusStopsList.h"
 #import "HawkBusStop.h"
-
+#import "HawkBusRoute.h"
+#import "HawkBusAppDelegate.h"
 @interface HawkBusClickedOnRouteViewController : UIViewController
 @property (weak, nonatomic) NSString *routeName;
 @property (nonatomic) NSArray *routeCoordinates;
 @property (weak,nonatomic) NSString *routeID;
-//@property (nonatomic) HawkBusStopsList *stopsList;
 @property (nonatomic) HawkBusLatitudeLongitude *center;
 @property (nonatomic) HawkBusLatitudeLongitude *neCoordinate;
 @property (nonatomic) HawkBusLatitudeLongitude *swCoordinate;
+//@property (nonatomic) NSMutableArray *stopsAlongRoute;
 - (IBAction)refreshPushed:(id)sender;
 @end

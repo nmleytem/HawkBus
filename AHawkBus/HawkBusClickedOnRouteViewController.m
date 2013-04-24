@@ -10,7 +10,7 @@
 #import "HawkBusClickedOnStopViewController.h"
 #import <MapKit/MapKit.h>
 #import <MapKit/MKPolyline.h>
-#import "HawkBusRoute.h"
+
 
 
 @interface HawkBusClickedOnRouteViewController ()<UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate>
@@ -20,7 +20,6 @@
 @end
 
 @implementation HawkBusClickedOnRouteViewController
-HawkBusStopsList *stopsList;
 NSMutableArray *stopsAlongRoute;
 CLLocationManager *locationManager;
 CLLocation *location;
@@ -47,7 +46,6 @@ BOOL updatingLocation;
         updatingLocation = NO;
         
     }
-    [self.stopsTableView reloadData];
 }
 - (void)didTimeOut:(id)obj
 {
@@ -58,6 +56,7 @@ BOOL updatingLocation;
 - (void)getLocation{
     if (updatingLocation) {
         [self stopLocationManager];
+        //[self.stopsTableView reloadData];
     } else {
         location = nil;
         [self startLocationManager];
@@ -72,12 +71,6 @@ BOOL updatingLocation;
     }
     return self;
 }
-- (HawkBusStopsList *) stopsList {
-	if (!stopsList) {
-		stopsList = [[HawkBusStopsList alloc] init];
-	}
-	return  stopsList;
-}
 
 - (void) viewWillAppear:(BOOL)animated{
     CLLocationCoordinate2D center;
@@ -88,7 +81,6 @@ BOOL updatingLocation;
     coordinateSpan.longitudeDelta = (self.neCoordinate.longitude - self.swCoordinate.longitude);
     MKCoordinateRegion viewRegion = MKCoordinateRegionMake(center,coordinateSpan);
     [_mapView setRegion:viewRegion animated:YES];
-
 }
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
     
@@ -97,7 +89,6 @@ BOOL updatingLocation;
     polylineView.lineWidth = 3.0;
     
     return polylineView;
-    
 }
 
 - (void)viewDidLoad
@@ -145,7 +136,6 @@ BOOL updatingLocation;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
     return [stopsAlongRoute count];
     
@@ -195,11 +185,11 @@ BOOL updatingLocation;
                                                                           CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
-        [self.stopsTableView reloadData];
+        //[self.stopsTableView reloadData];
         return;
     }
     if (newLocation.horizontalAccuracy < 0) {
-        [self.stopsTableView reloadData];
+        //[self.stopsTableView reloadData];
         return;
     }
     
@@ -213,12 +203,14 @@ BOOL updatingLocation;
         location = newLocation;
         if (newLocation.horizontalAccuracy <= locationManager.desiredAccuracy) {
             [self stopLocationManager];
+            //[self.stopsTableView reloadData];
             
             if (distance < 1.0) {
                 NSTimeInterval timeInterval = [newLocation.timestamp timeIntervalSinceDate:
                                                location.timestamp];
                 if (timeInterval > 10) {
                     [self stopLocationManager];
+                    //[self.stopsTableView reloadData];
                 }
             }
         }

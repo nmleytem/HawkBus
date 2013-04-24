@@ -8,11 +8,15 @@
 
 #import "HawkBusAppDelegate.h"
 
+
 @implementation HawkBusAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    stopsList = [HawkBusStopsList new];
+    routesList = [HawkBusRoutesList new];
     // Override point for customization after application launch.
+
     return YES;
 }
 							

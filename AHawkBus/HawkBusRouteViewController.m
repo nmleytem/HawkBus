@@ -8,6 +8,7 @@
 
 #import "HawkBusRouteViewController.h"
 #import "HawkBusRoutesList.h"
+#import "HawkBusStopsList.h"
 #import "HawkBusClickedOnRouteViewController.h"
 
 @interface HawkBusRouteViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -15,14 +16,8 @@
 @end
 
 @implementation HawkBusRouteViewController
-HawkBusRoutesList* routesList;
+NSMutableArray *stopsAlongRoute;
 
-- (HawkBusRoutesList *) routesList{
-    if(!routesList){
-        routesList = [[HawkBusRoutesList alloc] init];
-    }
-    return routesList;
-}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -57,6 +52,7 @@ HawkBusRoutesList* routesList;
     childVC.neCoordinate = [routesList neCoordinateForIndex:selectedCellNum];
     childVC.swCoordinate = [routesList swCoordinateForIndex:selectedCellNum];
     childVC.routeCoordinates = [routesList locationsArrayForIndex:selectedCellNum];
+    
 }
 
 #pragma mark - Table view data source
@@ -70,14 +66,14 @@ HawkBusRoutesList* routesList;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.routesList numberOfRoutes];
+    return [routesList numberOfRoutes];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger cellnum = indexPath.row;
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"route"];
-	cell.textLabel.text = [self.routesList routeNameForIndex:cellnum];
+	cell.textLabel.text = [routesList routeNameForIndex:cellnum];
     
     return cell;
 }
