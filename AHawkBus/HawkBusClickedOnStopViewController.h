@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-
 @interface HawkBusClickedOnStopViewController : UIViewController
 @property (strong,nonatomic) NSString * nameString;
 @property (strong,nonatomic) NSString * numberString;

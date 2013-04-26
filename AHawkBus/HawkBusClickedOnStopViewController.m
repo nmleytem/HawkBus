@@ -15,6 +15,7 @@
 @interface HawkBusClickedOnStopViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *StopsListView;
+@property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @end
 
 @implementation HawkBusClickedOnStopViewController
@@ -35,6 +36,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)favoritesButtonPressed:(id)sender {
+}
+- (IBAction)refreshButtonPushed:(id)sender {
 }
 
 @end
